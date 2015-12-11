@@ -19,3 +19,5 @@
 # Ignore bundled gems and files from seperated project.
 /vendor/bundle
 /public/*
+
+/config/application.yml
