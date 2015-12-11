@@ -1,6 +1,6 @@
 # README
 
-Hardened Layer is a custom portal for SoftLayer cloud service.
+**Hardened Layer** is a custom portal for SoftLayer cloud service.
 
 currently, It supports RESTful API for SoftLayer.  SoftLayer also provides
 REST API but I think it is not a RESTful one. (It is just a Wrapped API of
@@ -20,7 +20,7 @@ is "Hardened Layer" so sometime later, I will add something special.
 
 ## Environment
 
-It developed with:
+It was developed with:
 
 * Ruby 2.1.2p95 (2014-05-08), the version from Ubuntu 15.04.
 * Rails 4.2.5, the version from current Gem repository.
