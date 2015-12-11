@@ -16,5 +16,6 @@
 !/log/.keep
 /tmp
 
-# Ignore gem bundle.
+# Ignore bundled gems and files from seperated project.
 /vendor/bundle
+/public/*
