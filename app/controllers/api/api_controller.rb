@@ -7,6 +7,8 @@ class Api::ApiController < ActionController::Base
     pass = ENV['SL_API_KEY']
     @client = SoftLayer::Client.new(username: user, api_key: pass)
     @account = SoftLayer::Account.account_for_client(@client)
+
+    response.headers['Access-Control-Allow-Origin'] = '*'
   end
 
   def h_from obj
