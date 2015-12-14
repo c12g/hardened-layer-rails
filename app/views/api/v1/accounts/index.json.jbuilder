@@ -1,1 +1,1 @@
-json.extract! @data, :accounts, :servers
+json.extract! @data, :accounts
