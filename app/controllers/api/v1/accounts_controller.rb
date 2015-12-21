@@ -9,7 +9,7 @@ class Api::V1::AccountsController < Api::ApiController
     account[:virtualDiskImages] = ha_from(@account.virtual_disk_images)
     account[:users] = ha_from(@account.users)
     account[:openTickets] = ha_from(@account.open_tickets)
-    account[:servers] = ha_from(@account.servers)
+    account[:networkVlans] = @client[:Account].getNetworkVlans
     @data = { :accounts => [account] }
   end
 end
