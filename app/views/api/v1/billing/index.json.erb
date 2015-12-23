@@ -1,0 +1,4 @@
+{<% @billing.each do |b| %>
+  "<%= b[:hostname] %>": <%= '%0.3f' % b[:fee] %><%
+    unless b == @billing.last %>,<% end %><% end %>
+}
