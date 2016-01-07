@@ -2,8 +2,11 @@ class Api::V1::BillingController < Api::ApiController
 
   # GET /accounts.json
   def index
+    timing "start index..."
     account = h_from(@account)
+    timing "set servers..."
     servers = ha_from(@account.servers)
+    timing "generate billing informations..."
     @billing = Array.new
     servers.each do |s|
       b = Hash.new
@@ -13,5 +16,6 @@ class Api::V1::BillingController < Api::ApiController
       b[:fee] = s[:billingItem]['recurringFee']
       @billing.push(b)
     end
+    timing "done!"
   end
 end
