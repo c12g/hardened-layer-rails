@@ -12,8 +12,10 @@ class Api::V1::BillingController < Api::ApiController
       b = Hash.new
       b[:id] = s[:id]
       b[:hostname] = s[:hostname]
-      b[:billing_id] = s[:billingItem]['id']
-      b[:fee] = s[:billingItem]['recurringFee']
+      if s[:billingItem]
+        b[:billing_id] = s[:billingItem]['id']
+        b[:fee] = s[:billingItem]['recurringFee']
+      end
       @billing.push(b)
     end
     timing "done!"

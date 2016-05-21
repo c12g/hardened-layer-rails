@@ -2,6 +2,7 @@ class Api::V1::AccountsController < Api::ApiController
 
   # GET /accounts.json
   def index
+    expires_in 10.minutes, private: true
     timing "start index..."
     account = h_from(@account)
     timing "set image templates..."
