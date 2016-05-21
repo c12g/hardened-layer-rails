@@ -10,7 +10,13 @@ class Api::V1::AccountsController < Api::ApiController
     timing "set bare metals..."
     account[:bareMetalServers] = ha_from(@account.bare_metal_servers)
     timing "set virtual servers..."
-    account[:virtualServers] = ha_from(@account.virtual_servers)
+    #account[:virtualServers] = ha_from(@account.virtual_servers)
+    account[:virtualServers] = Array.new
+    @account.virtual_servers.each do |vsi|
+      vh = h_from(vsi)
+      vh[:activeTransaction] = vsi.activeTransaction
+      account[:virtualServers].push(vh)
+    end
     timing "set disk images..."
     account[:virtualDiskImages] = ha_from(@account.virtual_disk_images)
     timing "set users..."
